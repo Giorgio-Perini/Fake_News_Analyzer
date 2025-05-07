@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet">
+    <title>Fake News Analyzer</title>
+</head>
+<body>
+    <h1>Fake News Analyzer</h1>
+    <h2>Analizza le notizie, scopri se sono Fake News!</h2>
+    <form method="POST">
+        <label for="titolo">Inserisci un titolo di notizia:</label><br>
+        <input type="text" id="titolo" name="titolo" required><br><br>
+        <input type="submit" value="Classifica">
+    </form>
+
+    {% if titolo %}
+        <h2>Risultato per: "{{ titolo }}"</h2>
+        <p><strong>Punteggio:</strong> {{ punteggio }}</p>
+        <p><strong>Classificazione:</strong> {{ classe }}</p>
+    {% endif %}
+</body>
+</html>
